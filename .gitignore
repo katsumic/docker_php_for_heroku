@@ -1,0 +1,9 @@
+# Logs
+logs
+*.log
+
+# Data
+data
+
+# dotenv environment variables file
+.env
