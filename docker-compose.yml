@@ -5,7 +5,7 @@ services:
       context: ./conf/php-fpm
       args:
         - TZ=${TZ}
-    image: php-ext
+    image: php-ext:7.4.4-fpm-alpine 
     ports:
       - ${HOST_PHP_PORT}:${PHP_PORT}
     volumes:
