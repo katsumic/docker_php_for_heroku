@@ -67,3 +67,8 @@ services:
     image: mailhog/mailhog
     ports:
       - ${HOST_MAILHOG_PORT}:${MAILHOG_PORT}
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /tmp
+    volumes:
+      - ./data/mailhog/maildir:/tmp
