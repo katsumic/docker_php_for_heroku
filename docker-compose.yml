@@ -23,6 +23,11 @@ services:
       - DB_DATABASE=${DB_DATABASE}
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_PORT=${MAIL_PORT}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
 
   postgres:
     restart: always
@@ -57,3 +62,8 @@ services:
       - ./logs/nginx:/var/log/nginx
     environment:
       - TZ=${TZ}
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - ${HOST_MAILHOG_PORT}:${MAILHOG_PORT}
