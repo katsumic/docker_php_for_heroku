@@ -5,7 +5,7 @@ services:
       context: ./conf/php-fpm
       args:
         - TZ=${TZ}
-    image: php-ext:7.4.4-fpm-alpine
+    image: php-ext:7.4.5-fpm-alpine
     ports:
       - ${HOST_PHP_PORT}:${PHP_PORT}
     volumes:
@@ -51,7 +51,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
   nginx:
-    image: nginx:1.16.1-alpine
+    image: nginx:1.18.0-alpine
     depends_on:
       - postgres
       - php-fpm
